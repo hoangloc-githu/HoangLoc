@@ -1,4 +1,4 @@
-# VIETNAM SỜ CU RI TY
+#VIETNAM SỜ CU RI TY#
 import socket
 import os
 import requests
@@ -7,218 +7,99 @@ import getpass
 import time
 import sys
 
-# Hàm neon màu cầu vồng
-def neon(text):
-    colors = [31, 32, 33, 34, 35, 36, 91, 92, 93, 94, 95, 96]  # ANSI colors
-    result = ""
-    for char in text:
-        if char.strip() == "":
-            result += char
-        else:
-            result += f"\x1b[1;{random.choice(colors)}m{char}\x1b[0m"
-    return result
-
-name = input(neon("UserName:"))
+name = input("UserName:")
 
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def ascii_vro():
     clear()
-    print(neon('''
-   '''))
+    print(f'''
+   ''')
     clear()
 
 def banners():
-    clear()
-    print(neon("""
+    clear()    
+    print(f"""
 METHODS
 CLEAR 
-"""))
+""")
 
-def meth():
-    print(neon('''
-HTTP-BROWSER    [URL]    [PORT]    [TIME]
-HTTP-SPAM       [URL]    [PORT]    [TIME]
-HTTP-KILLER     [URL]    [PORT]    [TIME]
-HTTP-GET        [URL]    [PORT]    [TIME]
-HTTP-MERIS      [URL]    [PORT]    [TIME]
-CLOUDFLARE      [URL]    [PORT]    [TIME]
-HTTP-BYPASS     [URL]    [PORT]    [TIME]
-HTTP-FLOOD      [URL]    [PORT]    [TIME]
-'''))
+def meth():        
+    print(f'''
+\x1b[38;5;55mHTTP-\x1b[1;37mBROWSER    \x1b[38;5;55m[\x1b[1;37mURL\x1b[38;5;55m]    \x1b[38;5;55m[\x1b[1;37mPORT\x1b[38;5;55m]    \x1b[38;5;55m[\x1b[1;37mTIME\x1b[38;5;55m]
+\x1b[38;5;55mHTTP-\x1b[1;37mSPAM       \x1b[38;5;55m[\x1b[1;37mURL\x1b[38;5;55m]    \x1b[38;5;55m[\x1b[1;37mPORT\x1b[38;5;55m]    \x1b[38;5;55m[\x1b[1;37mTIME\x1b[38;5;55m]
+\x1b[38;5;55mHTTP-\x1b[1;37mKILLER     \x1b[38;5;55m[\x1b[1;37mURL\x1b[38;5;55m]    \x1b[38;5;55m[\x1b[1;37mPORT\x1b[38;5;55m]    \x1b[38;5;55m[\x1b[1;37mTIME\x1b[38;5;55m]
+\x1b[38;5;55mHTTP-\x1b[1;37mGET        \x1b[38;5;55m[\x1b[1;37mURL\x1b[38;5;55m]    \x1b[38;5;55m[\x1b[1;37mPORT\x1b[38;5;55m]    \x1b[38;5;55m[\x1b[1;37mTIME\x1b[38;5;55m]
+\x1b[38;5;55mHTTP-\x1b[1;37mMERIS      \x1b[38;5;55m[\x1b[1;37mURL\x1b[38;5;55m]    \x1b[38;5;55m[\x1b[1;37mPORT\x1b[38;5;55m]    \x1b[38;5;55m[\x1b[1;37mTIME\x1b[38;5;55m]
+\x1b[38;5;55mCLOUD\x1b[1;37mFLARE      \x1b[38;5;55m[\x1b[1;37mURL\x1b[38;5;55m]    \x1b[38;5;55m[\x1b[1;37mPORT\x1b[38;5;55m]    \x1b[38;5;55m[\x1b[1;37mTIME\x1b[38;5;55m]
+\x1b[38;5;55mHTTP-\x1b[1;37mBYPASS     \x1b[38;5;55m[\x1b[1;37mURL\x1b[38;5;55m]    \x1b[38;5;55m[\x1b[1;37mPORT\x1b[38;5;55m]    \x1b[38;5;55m[\x1b[1;37mTIME\x1b[38;5;55m]
+\x1b[38;5;55mHTTP-\x1b[1;37mFLOOD      \x1b[38;5;55m[\x1b[1;37mURL\x1b[38;5;55m]    \x1b[38;5;55m[\x1b[1;37mPORT\x1b[38;5;55m]    \x1b[38;5;55m[\x1b[1;37mTIME\x1b[38;5;55m]
+''')
 
 def menu():
     os.system("clear")
-    print(neon("""
-                        ╔╦╗ ╦ ╦╔═ ╦ ╦
-                        ║║║ ║ ╠╩╗ ║ ║
-                        ╩ ╩ ╩ ╩ ╚═╚═╝
-                  -Best C2 In the Year 2024-
-             ╚═╦═══════════════════╦═╝       
-          ╚╦═══╩═══════════════════╩═══╦╝
-    ╚╦═════╩══════════════════════════╩══════╦╝
-     ║        -Welcome To MikuC2 Made By VanDuc-        ║
-     ║             -Powerful Layer7 Bypasser-           ║        
-    ╔╩═╦══════════════════════════════════════╦═╩╗
-       ║            -PhuVanDuc X Miku C2-             ║
-      ╔╩══════════════════════════════════════╩╗
-      ║  _Copyright © 2024 Miku C2 All Right Reserved_ ║
-     ╔╩══════════════════════════════════════╩╗
-"""))
+    print("""          
+                        \x1b[1;37m╔╦╗ ╦ \x1b[38;5;55m╦╔═ ╦ ╦
+                        \x1b[1;37m║║║ ║ \x1b[38;5;55m╠╩╗ ║ ║
+                        \x1b[1;37m╩ ╩ ╩ \x1b[38;5;55m╩ ╚═╚═╝
+                  \x1b[1;37m-Best C2 In\x1b[38;5;55m the Year 2024-
+             \x1b[1;37m╚═╦══════════════\x1b[38;5;55m═══════════════╦═╝       
+          \x1b[1;37m╚╦═══╩══════════════\x1b[38;5;55m═══════════════╩═══╦╝
+    \x1b[1;37m╚╦═════╩══════════════════\x1b[38;5;55m═══════════════════╩══════╦╝
+     \x1b[1;37m║        -Welcome To Miku\x1b[38;5;55mC2 Made By VanDuc-        ║
+     \x1b[1;37m║             -Powerful L\x1b[38;5;55mayer7 Bypasser-           ║        
+    \x1b[1;37m╔╩═╦══════════════════════\x1b[38;5;55m════════════════════════╦═╩╗
+       \x1b[1;37m║            -PhuVanDuc\x1b[38;5;55m X Miku C2-             ║
+      \x1b[1;37m╔╩══════════════════════\x1b[38;5;55m════════════════════════╩╗
+      \x1b[1;37m║  _Copyright © 2024 Mik\x1b[38;5;55mu C2 All Right Reserved_ ║
+     \x1b[1;37m╔╩═══════════════════════\x1b[38;5;55m═════════════════════════╩╗
+      
+    """)
+
+def layer7_menu():
+    clear()
+    print(f"""
+\x1b[1;37m====================\x1b[38;5;55m LAYER 7 METHODS \x1b[1;37m====================
+\x1b[1;37m[1] TLS        [2] BYPASS
+\x1b[1;37m[3] TLS1       [4] KILL
+\x1b[1;37m[5] HIGH       [0] Back
+\x1b[1;37m============================================\x1b[0m
+""")
+    choice = input(f"\x1b[1;37m{name}@\x1b[38;5;55mLayer7\x1b[1;37m:~# ")
+    
+    methods_dict = {
+        "1": "tls",
+        "2": "bypass",
+        "3": "tls1",
+        "4": "kill",
+        "5": "high"
+    }
+
+    if choice in methods_dict:
+        method = methods_dict[choice]
+        os.system(f"node {method}.js")
+    elif choice == "0":
+        main()
+    else:
+        print("\n\x1b[1;37mInvalid choice!\x1b[38;5;55m Try again...")
+        time.sleep(1)
+        layer7_menu()
 
 def main():
     menu()
     while True:
-        cnc = input(neon(f"{name}@Admin:~# "))
+        cnc = input(f"\x1b[1;37m{name}@\x1b[38;5;55mAdmin\x1b[1;37m:~# ")
         if cnc.lower() in ["methods", "method"]:
-            meth()
+            layer7_menu()                
         elif cnc.lower() in ["clear", "cls"]:
             main()
         elif cnc.lower() == "help":
             help()
-        
-        # LAYER 7 METHODS
-        elif "HTTP-BROWSER" in cnc.upper():
-            try:
-                url, port, duration = cnc.split()[1:4]
-                clear()
-                print(neon(f"""
-Target      × [{url}]
-Port        × [{port}]
-Duration    × [{duration}]
-Method      × [HTTP-BROWSER]
-User        × [{name}]
-Vip         × [TRUE]
-ADMIN       × [PhuVanDuc]
-Plan        × [SLIVER X VIP]
-"""))
-            except IndexError:
-                menu()
-        
-        elif "HTTP-KILLER" in cnc.upper():
-            try:
-                url, port, duration = cnc.split()[1:4]
-                clear()
-                print(neon(f"""
-Target      × [{url}]
-Port        × [{port}]
-Duration    × [{duration}]
-Method      × [HTTP-KILLER]
-User        × [{name}]
-Vip         × [TRUE]
-ADMIN       × [PhuVanDuc]
-Plan        × [SLIVER X VIP]
-"""))
-            except IndexError:
-                menu()
-        
-        elif "HTTP-SPAM" in cnc.upper():
-            try:
-                url, port, duration = cnc.split()[1:4]
-                clear()
-                print(neon(f"""
-Target      × [{url}]
-Port        × [{port}]
-Duration    × [{duration}]
-Method      × [HTTP-SPAM]
-User        × [{name}]
-Vip         × [TRUE]
-ADMIN       × [PhuVanDuc]
-Plan        × [SLIVER X VIP]
-"""))
-            except IndexError:
-                menu()
-        
-        elif "HTTP-GET" in cnc.upper():
-            try:
-                url, port, duration = cnc.split()[1:4]
-                clear()
-                print(neon(f"""
-Target      × [{url}]
-Port        × [{port}]
-Duration    × [{duration}]
-Method      × [HTTP-GET]
-User        × [{name}]
-Vip         × [TRUE]
-ADMIN       × [PhuVanDuc]
-Plan        × [SLIVER X VIP]
-"""))
-            except IndexError:
-                menu()
-        
-        elif "CLOUDFLARE" in cnc.upper():
-            try:
-                url, port, duration = cnc.split()[1:4]
-                clear()
-                print(neon(f"""
-Target      × [{url}]
-Port        × [{port}]
-Duration    × [{duration}]
-Method      × [CLOUDFLARE]
-User        × [{name}]
-Vip         × [TRUE]
-ADMIN       × [PhuVanDuc]
-Plan        × [SLIVER X VIP]
-"""))
-            except IndexError:
-                menu()
-        
-        elif "HTTP-MERIS" in cnc.upper():
-            try:
-                url, port, duration = cnc.split()[1:4]
-                clear()
-                print(neon(f"""
-Target      × [{url}]
-Port        × [{port}]
-Duration    × [{duration}]
-Method      × [HTTP-MERIS]
-User        × [{name}]
-Vip         × [TRUE]
-ADMIN       × [PhuVanDuc]
-Plan        × [SLIVER X VIP]
-"""))
-            except IndexError:
-                menu()
-        
-        elif "HTTP-FLOOD" in cnc.upper():
-            try:
-                url, port, duration = cnc.split()[1:4]
-                clear()
-                print(neon(f"""
-Target      × [{url}]
-Port        × [{port}]
-Duration    × [{duration}]
-Method      × [HTTP-FLOOD]
-User        × [{name}]
-Vip         × [TRUE]
-ADMIN       × [PhuVanDuc]
-Plan        × [SLIVER X VIP]
-"""))
-            except IndexError:
-                menu()
-        
-        elif "HTTP-BYPASS" in cnc.upper():
-            try:
-                url, port, duration = cnc.split()[1:4]
-                clear()
-                print(neon(f"""
-Target      × [{url}]
-Port        × [{port}]
-Duration    × [{duration}]
-Method      × [HTTP-BYPASS]
-User        × [{name}]
-Vip         × [TRUE]
-ADMIN       × [PhuVanDuc]
-Plan        × [SLIVER X VIP]
-"""))
-            except IndexError:
-                menu()
-        
         else:
             try:
-                _ = cnc.split()[0]
-                clear()
+                cmmnd = cnc.split()[0]
+                os.system("clear")
                 menu()
             except IndexError:
                 pass
@@ -227,13 +108,13 @@ def login():
     clear()
     user = "PhuVanDuc"
     passwd = "MikuC2"
-    username = input(neon("Username: "))
-    password = getpass.getpass(prompt=neon('Password: '))
+    username = input("Username: ")
+    password = getpass.getpass(prompt='Password: ')
     if username != user or password != passwd:
-        print(neon("\nFail"))
+        print("\nFail")
         sys.exit(1)
     elif username == user and password == passwd:
-        print(neon("Welcome To MikuC2"))
+        print("Welcome To MikuC2")
         time.sleep(0.3)
         ascii_vro()
         main()
