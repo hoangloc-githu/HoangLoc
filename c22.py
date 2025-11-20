@@ -7,6 +7,9 @@ import getpass
 import time
 import sys
 
+from rich_gradient import Gradient
+grad = Gradient()
+
 name = input("UserName:")
 
 def clear():
@@ -14,7 +17,7 @@ def clear():
 
 def ascii_vro():
     clear()
-    print(f'''
+    print(f'''   
    ''')
     clear()
 
@@ -57,17 +60,29 @@ def menu():
       
     """)
 
+# ============================================================
+#        🔥🔥 UPGRADE LAYER 7 MENU USING rich_gradient 🔥🔥
+# ============================================================
+
 def layer7_menu():
     clear()
-    print(f"""
-\x1b[1;37m====================\x1b[38;5;55m LAYER 7 METHODS \x1b[1;37m====================
-\x1b[1;37m[1] TLS        [2] BYPASS
-\x1b[1;37m[3] TLS1       [4] KILL
-\x1b[1;37m[5] HIGH       [0] Back
-\x1b[1;37m============================================\x1b[0m
-""")
-    choice = input(f"\x1b[1;37m{name}@\x1b[38;5;55mLayer7\x1b[1;37m:~# ")
-    
+
+    print(grad.text("╔══════════════════════════════════╗", colors=["#00FFFF","#FF00FF"]))
+    print(grad.text("        LAYER 7  METHODS           ", colors=["#FF00FF","#00FFFF"]))
+    print(grad.text("╚══════════════════════════════════╝", colors=["#00FFFF","#FF00FF"]))
+    print()
+
+    print(grad.text("[1] TLS", colors=["#00FFFF", "#FF00FF"]))
+    print(grad.text("[2] BYPASS", colors=["#00FFFF", "#FF00FF"]))
+    print(grad.text("[3] TLS1", colors=["#00FFFF", "#FF00FF"]))
+    print(grad.text("[4] KILL", colors=["#00FFFF", "#FF00FF"]))
+    print(grad.text("[5] HIGH", colors=["#00FFFF", "#FF00FF"]))
+    print(grad.text("[0] BACK", colors=["#FF0000", "#FF9900"]))
+
+    print()
+
+    choice = input(grad.text(f"{name}@Layer7:~# ", colors=["#00FFFF","#FF00FF"]))
+
     methods_dict = {
         "1": "tls",
         "2": "bypass",
@@ -82,9 +97,11 @@ def layer7_menu():
     elif choice == "0":
         main()
     else:
-        print("\n\x1b[1;37mInvalid choice!\x1b[38;5;55m Try again...")
+        print(grad.text("Invalid choice! Try again...", colors=["#FF0000", "#FF6600"]))
         time.sleep(1)
         layer7_menu()
+
+# ============================================================
 
 def main():
     menu()
